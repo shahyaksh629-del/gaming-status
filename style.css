@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b0c10;
+    color: #c5c6c7;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar & User Profiles */
+.sidebar {
+    width: 260px;
+    background-color: #1f2833;
+    padding: 30px 20px;
+    border-right: 1px solid rgba(102, 252, 241, 0.1);
+}
+
+.sidebar .logo {
+    font-size: 20px;
+    font-weight: 900;
+    color: #66fcf1;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.user-profile {
+    background: rgba(11, 12, 16, 0.5);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 30px;
+    border: 1px solid rgba(69, 162, 158, 0.2);
+}
+
+.user-profile .avatar {
+    width: 50px;
+    height: 50px;
+    background: #45a29e;
+    color: #0b0c10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+
+.user-profile .username {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.user-profile .region {
+    font-size: 12px;
+    color: #45a29e;
+    margin-top: 4px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.sidebar ul li:hover, .sidebar ul li.active {
+    background-color: #0b0c10;
+    color: #66fcf1;
+    border-left: 4px solid #66fcf1;
+}
+
+/* Main Core Layout */
+.main-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.top-nav h1 {
+    color: #ffffff;
+    font-size: 28px;
+}
+
+.top-nav .subtitle {
+    color: #45a29e;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.status-badge {
+    background: rgba(102, 252, 241, 0.05);
+    border: 1px solid #66fcf1;
+    color: #66fcf1;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Game Cards Grid */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.game-card {
+    background-color: #1f2833;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    border-left: 5px solid #45a29e;
+    transition: transform 0.2s;
+}
+
+.game-card:hover {
+    transform: translateY(-3px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-header h2 {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.platform-tag {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.pc { background-color: #ff4655; color: #fff; }
+.web { background-color: #81b64c; color: #fff; }
+.mobile { background-color: #f3a922; color: #fff; }
+.casual { background-color: #a855f7; color: #fff; }
+
+.main-stat {
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* Highlight text panels */
+.highlight-badge {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #66fcf1;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+.highlight-badge.legacy { color: #f3a922; background: rgba(243, 169, 34, 0.05); }
+.highlight-badge.training { color: #ff4655; background: rgba(255, 70, 85, 0.05); }
+
+/* Internal Grid for Chess Ratings */
+.chess-sub-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.mini-stat-box {
+    background: #0b0c10;
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mini-stat-box .label {
+    font-size: 11px;
+    color: #45a29e;
+    text-transform: uppercase;
+}
+
+.mini-stat-box .val {
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.up { color: #81b64c; font-size: 12px; }
+.down { color: #ff4655; font-size: 12px; }
+
+/* 3-Column Split Layout for Pool */
+.stat-row.split-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    background: #0b0c10;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.stat-row.split-3 .label {
+    font-size: 10px;
+    color: #45a29e;
+    display: block;
+}
+
+.stat-row.split-3 .num {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Horizontal data layouts */
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #c5c6c7;
+}
+
+.footer-stat {
+    border-top: 1px solid rgba(197, 198, 199, 0.1);
+    padding-top: 12px;
+    margin-top: 12px;
+    font-size: 12px;
+    color: #45a29e;
+}
+
+/* Color Accent Coding per Theme */
+.game-card.chess { border-left-color: #81b64c; }
+.game-card.clash { border-left-color: #00c0ff; }
+.game-card.pool { border-left-color: #00aa50; }
+.game-card.bgmi { border-left-color: #f3a922; }
+.game-card.valorant { border-left-color: #ff4655; }
+.game-card.amongus { border-left-color: #ff2a2a; }
